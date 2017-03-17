@@ -1,1 +1,1 @@
-#install.package("packagename")
+#install.packages("packagename")
