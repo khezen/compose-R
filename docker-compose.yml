@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  rstudio:
+    build: ./rstudio.Dockerfile
+    environment:
+      USER: rstudio
+      PASSWORD: rstudio
+      ROOT: "FALSE"
+    volumes:
+      - .:/src
+    ports:
+      - "8787:8787"
+    networks:
+      - R
+
+  rshiny:
+    image: rocker/shiny
+    volumes:
+      - .:/srv/shiny-server
+      - /var/logs/shiny:/var/log/shiny-server
+    ports:
+      - "3838:3838"
+    networks:
+      - R
+    restart: unless-stopped
+
+networks:
+  R:
+    driver: bridge
