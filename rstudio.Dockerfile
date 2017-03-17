@@ -1,4 +1,4 @@
 FROM rocker/rstudio
 
-# include dependencies here
-# RUN apt-get install ...
+COPY dependencies.R ./dependencies.R
+RUN Rscript dependencies.R
