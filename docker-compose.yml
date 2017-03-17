@@ -11,7 +11,7 @@ services:
       PASSWORD: rstudio
       ROOT: "FALSE"
     volumes:
-      - path/to/workspace:/src
+      - path/to/workspace:/home/rstudio
     ports:
       - "8787:8787"
     networks:
