@@ -9,7 +9,7 @@ services:
       PASSWORD: rstudio
       ROOT: "FALSE"
     volumes:
-      - .:/src
+      - path/to/workspace:/src
     ports:
       - "8787:8787"
     networks:
@@ -18,7 +18,7 @@ services:
   rshiny:
     image: rocker/shiny
     volumes:
-      - .:/srv/shiny-server
+      - path/to/workspace:/srv/shiny-server
       - /var/logs/shiny:/var/log/shiny-server
     ports:
       - "3838:3838"
