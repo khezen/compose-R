@@ -3,7 +3,9 @@ version: '3'
 services:
 
   rstudio:
-    build: ./rstudio.Dockerfile
+    build:
+      context: .
+      dockerfile: rstudio.Dockerfile
     environment:
       USER: rstudio
       PASSWORD: rstudio
